@@ -18,7 +18,7 @@ public class EShotgunParticle : MonoBehaviour
         {
             lifeTime -= Time.deltaTime;
         }
-        else if (lifeTime > 0)
+        else if (lifeTime > 0) // but less that stopEmitTime
         {
             lifeTime -= Time.deltaTime;
             p.enableEmission = false;
