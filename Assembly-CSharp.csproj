@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\Items\Coin.cs" />
     <Compile Include="Assets\Scripts\Misc\BonusBoy.cs" />
     <Compile Include="Assets\Scripts\Player\Bullet.cs" />
+    <Compile Include="Assets\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Player\Weapon.cs" />
     <Compile Include="Assets\EShotgunParticle.cs" />
@@ -82,7 +83,6 @@
     <Compile Include="Assets\Spawning1_3.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyMovLR.cs" />
     <Compile Include="Assets\EShotgun.cs" />
-    <Compile Include="Assets\MainMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
