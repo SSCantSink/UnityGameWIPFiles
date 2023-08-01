@@ -5654,7 +5654,8 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  audioMixerGroup: {fileID: 24300002, guid: c23d752c339fd034dbb5c6008bc8000b, type: 2}
+  soundEffectsAudioMixerGroup: {fileID: -1854601417125586786, guid: c23d752c339fd034dbb5c6008bc8000b, type: 2}
+  musicAudioMixerGroup: {fileID: 137232579919496774, guid: c23d752c339fd034dbb5c6008bc8000b, type: 2}
 --- !u!4 &569041402
 Transform:
   m_ObjectHideFlags: 0

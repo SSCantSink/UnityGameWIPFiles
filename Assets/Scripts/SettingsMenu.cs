@@ -51,15 +51,27 @@ public class SettingsMenu : MonoBehaviour
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 
-    public void SetVolume(float volume)
+    public void SetSoundsVolume(float volume)
     {
         if (volume <= -19.9f)
         {
-            audioMixer.SetFloat("volume", -80f);
+            audioMixer.SetFloat("SoundEffectsVolume", -80f);
+        }
+        else
+        {
+            audioMixer.SetFloat("SoundEffectsVolume", volume);
+        }
+    }
+
+    public void SetMusicVolume(float volume)
+    {
+        if (volume <= -19.9f)
+        {
+            audioMixer.SetFloat("MusicVolume", -80f);
         }
         else 
         {
-            audioMixer.SetFloat("volume", volume);
+            audioMixer.SetFloat("MusicVolume", volume);
         }
     }
 

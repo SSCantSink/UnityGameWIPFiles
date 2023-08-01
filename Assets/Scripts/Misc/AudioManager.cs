@@ -6,7 +6,8 @@ public class AudioManager : MonoBehaviour
 {
     [Header("References")]
     public Sound[] sounds;
-    public AudioMixerGroup audioMixerGroup;
+    public AudioMixerGroup soundEffectsAudioMixerGroup;
+    public AudioMixerGroup musicAudioMixerGroup;
 
     // Start is called before the first frame update
     void Awake()
@@ -21,7 +22,11 @@ public class AudioManager : MonoBehaviour
             s.source.loop = s.loop;
 
             // Assign the audio mixer group to the Audio Source
-            s.source.outputAudioMixerGroup = audioMixerGroup;
+            s.source.outputAudioMixerGroup = soundEffectsAudioMixerGroup;
+            if (s.name == "Theme")
+            {
+                s.source.outputAudioMixerGroup = musicAudioMixerGroup;
+            }
         }
     }
 
