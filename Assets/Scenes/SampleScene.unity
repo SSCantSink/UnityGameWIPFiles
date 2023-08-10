@@ -5558,118 +5558,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &569041400
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 569041402}
-  - component: {fileID: 569041401}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &569041401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 569041400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4ec72b7102b8f7479009f2ed993d55f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - name: PlayerDeath
-    clip: {fileID: 8300000, guid: b0b0e5de9e18ba442b38742c7eadcab4, type: 3}
-    volume: 0.4
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: Theme
-    clip: {fileID: 8300000, guid: eb50ae4393eff6045bce387e13552be5, type: 3}
-    volume: 0.18
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
-  - name: EnemyHurt
-    clip: {fileID: 8300000, guid: 9f79d759e08b9b64db080bd318582c0f, type: 3}
-    volume: 0.4
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: PlayerHurt
-    clip: {fileID: 8300000, guid: 0fec30152ac5b4a4087caf8f8115b520, type: 3}
-    volume: 0.4
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: HurtIFrames
-    clip: {fileID: 8300000, guid: 1ad9c0da3eef3f2468ee01b9c3ac9b77, type: 3}
-    volume: 0.4
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: EnemyExplosion
-    clip: {fileID: 8300000, guid: d11217810c791464f940f0d0d4572513, type: 3}
-    volume: 0.4
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: PlayerShoot
-    clip: {fileID: 8300000, guid: 699a21ca60012784c9805c6473120785, type: 3}
-    volume: 0.4
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: EnemyShoot
-    clip: {fileID: 8300000, guid: c8f8bc5732302b245b178531922761f4, type: 3}
-    volume: 0.4
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: CoinASparkle
-    clip: {fileID: 8300000, guid: edae8a199c1540e4ab11086d1d18915d, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: WaveSpawning
-    clip: {fileID: 8300000, guid: 9b594bea12c14124ea04a2de4be10849, type: 3}
-    volume: 0.4
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: CoinJSparkle
-    clip: {fileID: 8300000, guid: 7f9403ad262715f4994f66bc8d445f42, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  soundEffectsAudioMixerGroup: {fileID: -1854601417125586786, guid: c23d752c339fd034dbb5c6008bc8000b, type: 2}
-  musicAudioMixerGroup: {fileID: 137232579919496774, guid: c23d752c339fd034dbb5c6008bc8000b, type: 2}
---- !u!4 &569041402
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 569041400}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &653487734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11545,6 +11433,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b479f6022072ba429c65ff210f2a0d0, type: 3}
+--- !u!1001 &5631299938349540345
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5631299938884911617, guid: 1e83e9120daacc545a6b0520107a46c5, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631299938884911619, guid: 1e83e9120daacc545a6b0520107a46c5, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631299938884911619, guid: 1e83e9120daacc545a6b0520107a46c5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631299938884911619, guid: 1e83e9120daacc545a6b0520107a46c5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631299938884911619, guid: 1e83e9120daacc545a6b0520107a46c5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631299938884911619, guid: 1e83e9120daacc545a6b0520107a46c5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631299938884911619, guid: 1e83e9120daacc545a6b0520107a46c5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631299938884911619, guid: 1e83e9120daacc545a6b0520107a46c5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631299938884911619, guid: 1e83e9120daacc545a6b0520107a46c5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631299938884911619, guid: 1e83e9120daacc545a6b0520107a46c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631299938884911619, guid: 1e83e9120daacc545a6b0520107a46c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631299938884911619, guid: 1e83e9120daacc545a6b0520107a46c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1e83e9120daacc545a6b0520107a46c5, type: 3}
 --- !u!1001 &6754630904896291603
 PrefabInstance:
   m_ObjectHideFlags: 0

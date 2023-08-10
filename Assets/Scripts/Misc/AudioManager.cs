@@ -23,7 +23,7 @@ public class AudioManager : MonoBehaviour
 
             // Assign the audio mixer group to the Audio Source
             s.source.outputAudioMixerGroup = soundEffectsAudioMixerGroup;
-            if (s.name == "Theme")
+            if (s.name == "Theme" || s.name == "StartMenuTheme")
             {
                 s.source.outputAudioMixerGroup = musicAudioMixerGroup;
             }
@@ -33,6 +33,7 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         Play("Theme");
+        Play("StartMenuTheme");
     }
 
     public void Play(string name)
