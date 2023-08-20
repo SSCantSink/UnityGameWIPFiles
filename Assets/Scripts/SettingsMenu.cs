@@ -11,10 +11,17 @@ public class SettingsMenu : MonoBehaviour
 
     public TMP_Dropdown resolutionDropdown;
 
+    public GameObject backButton;
+
+    AudioManager sounds;
+
     Resolution[] resolutions;
 
     void Start()
     {
+
+        sounds = FindObjectOfType<AudioManager>();
+
         // find the list of all the resolutions
         resolutions = Screen.resolutions;
 
@@ -78,5 +85,12 @@ public class SettingsMenu : MonoBehaviour
     public void setFullScreen(bool isFullScreen)
     {
         Screen.fullScreen= isFullScreen;
+    }
+
+    public void closeOptions()
+    {
+        sounds.Play("MenuCancel");
+        Selector backButtonSelector = backButton.GetComponent<Selector>();
+        backButtonSelector.OnPointerExit(null);
     }
 }

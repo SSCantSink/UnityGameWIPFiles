@@ -20,7 +20,7 @@ public class Weapon : MonoBehaviour
     void Update()
     {
         // shoot when player presses space and no downtime.
-        if (Input.GetButtonDown("Fire1") && delay <= 0)
+        if (Input.GetButtonDown("Fire1") && delay <= 0 && !PauseMenu.GameIsPaused)
         {
             Shoot();
             delay = maxDelay;
