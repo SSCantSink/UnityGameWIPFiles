@@ -1,27 +1,33 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class Selector : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class Selector : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, ISelectHandler, IDeselectHandler
 {
     public GameObject[] objectsToShow; // The objects to show when the player hovers over the button
 
     AudioManager sounds;
 
+    private void Awake()
+    {
+       sounds = FindObjectOfType<AudioManager>();
+    }
+
     private void Start()
     {
+
         // Hide the objects at the start
         foreach (var obj in objectsToShow)
         {
             obj.SetActive(false);
         }
 
-        sounds = FindObjectOfType<AudioManager>();
+        //sounds = FindObjectOfType<AudioManager>();
     }
 
     // Called when the mouse pointer enters the button's area
     public void OnPointerEnter(PointerEventData eventData)
     {
-
         sounds.Play("Select");
 
         // Show the objects
@@ -39,5 +45,15 @@ public class Selector : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         {
             obj.SetActive(false);
         }
+    }
+
+    public void OnSelect(BaseEventData eventData)
+    {
+        OnPointerEnter(null);
+    }
+
+    public void OnDeselect(BaseEventData eventData)
+    {
+        OnPointerExit(null);
     }
 }

@@ -11,6 +11,15 @@ public class Weapon : MonoBehaviour
 
     AudioManager sounds;
 
+    PlayerControls controls;
+
+    private void Awake()
+    {
+        controls = new PlayerControls();
+
+        controls.Gameplay.Shoot.performed += ctx => Shoot();
+    }
+
     private void Start()
     {
         sounds = FindObjectOfType<AudioManager>();
@@ -20,14 +29,14 @@ public class Weapon : MonoBehaviour
     void Update()
     {
         // shoot when player presses space and no downtime.
-        if (Input.GetButtonDown("Fire1") && delay <= 0 && !PauseMenu.GameIsPaused)
+        /*if (Input.GetButtonDown("Fire1") && delay <= 0 && !PauseMenu.GameIsPaused)
         {
             Shoot();
             delay = maxDelay;
-        }
+        }*/
 
         // if there is downtime
-        if (delay > 0)
+        if (delay > 0f)
         {
             delay -= Time.deltaTime;
         }
@@ -36,7 +45,22 @@ public class Weapon : MonoBehaviour
 
     void Shoot()
     {
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        sounds.Play("PlayerShoot");
+
+        if (delay <= 0 && !PauseMenu.GameIsPaused)
+        {
+            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            sounds.Play("PlayerShoot");
+            delay = maxDelay;
+        }
+    }
+
+    private void OnEnable()
+    {
+        controls.Gameplay.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Gameplay.Disable();
     }
 }

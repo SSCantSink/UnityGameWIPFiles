@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using TMPro;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class SettingsMenu : MonoBehaviour
 {
@@ -12,6 +14,17 @@ public class SettingsMenu : MonoBehaviour
     public TMP_Dropdown resolutionDropdown;
 
     public GameObject backButton;
+
+    public SettingsData settingsData;
+
+    public GameObject soundsSlider;
+
+    public GameObject musicSlider;
+
+    public GameObject fullscreenCheckbox;
+
+    public GameObject buttonToSelectAfterQuitting;
+
 
     AudioManager sounds;
 
@@ -27,7 +40,6 @@ public class SettingsMenu : MonoBehaviour
 
         // clear the list of resolutions;
         resolutionDropdown.ClearOptions();
-
 
         int currentResolutionIndex = 0;
         List<string> options = new List<string>();
@@ -49,13 +61,46 @@ public class SettingsMenu : MonoBehaviour
 
         // make sure that the current resolution is selected
         resolutionDropdown.value = currentResolutionIndex;
+        LoadSettings();
         resolutionDropdown.RefreshShownValue();
+
+    }
+
+    public void SaveSettings()
+    {
+        SaveSystem.SaveSettings(settingsData.soundVolume, settingsData.musicVolume, settingsData.isFullScreen, settingsData.resolutionIndex);
+    }
+
+    public void LoadSettings()
+    {
+        settingsData = SaveSystem.LoadSettings();
+        if (settingsData != null)
+        {
+            SetSoundsVolume(settingsData.soundVolume);
+            soundsSlider.GetComponent<Slider>().value = settingsData.soundVolume;
+            SetMusicVolume(settingsData.musicVolume);
+            musicSlider.GetComponent<Slider>().value = settingsData.musicVolume;
+            SetResolution(settingsData.resolutionIndex);
+            resolutionDropdown.value = settingsData.resolutionIndex;
+            setFullScreen(settingsData.isFullScreen);
+            fullscreenCheckbox.GetComponent<Toggle>().isOn = settingsData.isFullScreen;
+        } else
+        {
+            settingsData = new SettingsData(0, 0, false, 0);
+            Debug.Log("Here");
+        }
+        
     }
 
     public void SetResolution(int resolutionIndex)
     {
-        Resolution resolution = resolutions[resolutionIndex];
-        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+        if (resolutions != null) 
+        {
+            Resolution resolution = resolutions[resolutionIndex];
+            Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+            settingsData.resolutionIndex = resolutionIndex;
+        }
+        
     }
 
     public void SetSoundsVolume(float volume)
@@ -68,6 +113,7 @@ public class SettingsMenu : MonoBehaviour
         {
             audioMixer.SetFloat("SoundEffectsVolume", volume);
         }
+        settingsData.soundVolume = volume;
     }
 
     public void SetMusicVolume(float volume)
@@ -80,11 +126,13 @@ public class SettingsMenu : MonoBehaviour
         {
             audioMixer.SetFloat("MusicVolume", volume);
         }
+        settingsData.musicVolume = volume;
     }
 
     public void setFullScreen(bool isFullScreen)
     {
         Screen.fullScreen= isFullScreen;
+        settingsData.isFullScreen= isFullScreen;
     }
 
     public void closeOptions()
@@ -92,5 +140,12 @@ public class SettingsMenu : MonoBehaviour
         sounds.Play("MenuCancel");
         Selector backButtonSelector = backButton.GetComponent<Selector>();
         backButtonSelector.OnPointerExit(null);
+
+        if (buttonToSelectAfterQuitting != null)
+        {
+            EventSystem.current.SetSelectedGameObject(buttonToSelectAfterQuitting);
+        }
+
+        //SaveSystem.SaveSettings();
     }
 }

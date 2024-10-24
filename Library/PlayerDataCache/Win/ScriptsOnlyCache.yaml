@@ -98,10 +98,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -146,6 +144,8 @@ ScriptsOnlyBuild:
     - Class: 83
       Script: {instanceID: 0}
     - Class: 84
+      Script: {instanceID: 0}
+    - Class: 89
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -250,17 +250,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6416}
     - Class: 114
-      Script: {instanceID: 6528}
+      Script: {instanceID: 6530}
     - Class: 114
-      Script: {instanceID: 6582}
+      Script: {instanceID: 6584}
     - Class: 114
-      Script: {instanceID: 7174}
+      Script: {instanceID: 7176}
     - Class: 114
-      Script: {instanceID: 7216}
+      Script: {instanceID: 7218}
     - Class: 114
-      Script: {instanceID: 7486}
+      Script: {instanceID: 7490}
     - Class: 114
-      Script: {instanceID: 7708}
+      Script: {instanceID: 7712}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -407,23 +407,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6368}
     - Class: 114
-      Script: {instanceID: 6526}
+      Script: {instanceID: 6528}
     - Class: 114
-      Script: {instanceID: 6898}
+      Script: {instanceID: 6900}
     - Class: 114
-      Script: {instanceID: 7174}
+      Script: {instanceID: 7176}
     - Class: 114
-      Script: {instanceID: 7216}
+      Script: {instanceID: 7218}
     - Class: 114
-      Script: {instanceID: 7428}
+      Script: {instanceID: 7432}
     - Class: 114
-      Script: {instanceID: 7622}
+      Script: {instanceID: 7626}
     - Class: 114
-      Script: {instanceID: 7742}
+      Script: {instanceID: 7746}
     - Class: 114
-      Script: {instanceID: 7768}
+      Script: {instanceID: 7772}
     - Class: 114
-      Script: {instanceID: 7858}
+      Script: {instanceID: 7862}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1451,7 +1451,7 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
-      Hash: 7c81c3310afe44d72d0e9093e3ba60ac
+      Hash: 714b3789b58b4dc89ea59f2e9238679e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SettingsMenu
@@ -1561,4 +1561,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/nosta/WIP/Builds/Build0.1.0/WIP.exe
+  playerPath: C:/Users/nosta/WIP/Builds/Build0.1.2/WIP.exe

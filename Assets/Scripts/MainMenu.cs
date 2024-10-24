@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
 
     public GameObject optionsButton;
+    public GameObject soundsSlider;
 
     AudioManager sounds;
 
@@ -27,6 +30,10 @@ public class MainMenu : MonoBehaviour
         sounds.Play("PressSelect");
         Selector optionsSelector = optionsButton.GetComponent<Selector>();
         optionsSelector.OnPointerExit(null);
+        if (soundsSlider != null)
+        {
+            EventSystem.current.SetSelectedGameObject(soundsSlider);
+        }
     }
 
     public void QuitGame()

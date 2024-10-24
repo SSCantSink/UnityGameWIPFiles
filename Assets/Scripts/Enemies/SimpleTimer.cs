@@ -5,7 +5,7 @@ public class SimpleTimer : MonoBehaviour
 
     float minTime;
     float maxTime;
-    float currentTime;
+    public float currentTime;
 
     public SimpleTimer(float minTime, float maxTime)
     {
